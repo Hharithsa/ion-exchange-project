@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="input">
+        <h2>Upload data file (excel)</h2>
+        <form action="/data-file" id="upload-file" method="POST" enctype="multipart/form-data"> 
+            <input type="file" name="file" required>
+            <button type="submit">Upload</button>
+        </form>
+        <div class="algo-select">
+            <label for="algo-select">Choose an Algorithm:</label>
+            <select id="algo-select" name="method">
+                <option value="rf" selected>Random Forest</option>
+                <option value="lr">Linear Regression</option>
+                <option value="gb">Gradient Boosting Regression</option>
+            </select>
+        </div>
+    </div>
+    <div class="output">
+        <form>
+            <label for="dropdown">Choose a target:</label>
+            <select id="dropdown" name="options">
+                
+            </select>
+        </form>
+        <button type="submit" id="compute-button">Compute</button>
+        <div class="value_holder">
+            <span class="label">Mean Squared Error:</span>
+            <span id="mse-value">Not computed</span>
+        </div>
+        <div class="value_holder">
+            <span class="label">Mean Absolute Error:</span>
+            <span id="mae-value">Not computed</span>
+        </div>
+        <div class="value_holder">
+            <span class="label">R-squared:</span>
+            <span id="r2-value">Not computed</span>
+        </div>
+    </div>
+    <div class = "plot">
+        <img class = "value_holder" id="image" alt="Matplotlib Plot" width="450" height="350">
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>

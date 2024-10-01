@@ -1,0 +1,68 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url("/static/image3.jpg");
+    background-size: 1560px;
+    font-family: Arial, sans-serif;
+}
+
+.input {
+    height: 250px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    background-color: #fff;
+    text-align: center;
+    padding: 30px;
+    padding-top: 100px;
+    margin: 40px;
+}
+
+.output {
+    width: 400px;
+    height: 320px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    background-color: #fff;
+    text-align: center;
+    padding: 30px;
+    margin: 40px;
+}
+
+.plot {
+    width: 690px;
+    height: 430px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    background-color: #fff;
+    text-align: center;
+    margin: 40px;
+    padding: -100px;
+}
+
+.value_holder{
+    padding: 20px;
+    border: 2px solid #aaa;
+    border-radius: 7px;
+    margin: 20px;
+    background-color: #effcff;
+    text-align: center;
+}
+
+.label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.algo-select{
+    padding: 20px;
+    margin: 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+button{
+    padding: 4px;
+}
