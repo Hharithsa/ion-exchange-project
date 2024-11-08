@@ -7,7 +7,7 @@ import base64
 import os
 
 from methods import rf, lr, gb
-from helper import clear_uploads_directory
+from helper import clear_uploads_directory, get_targets
 
 app = Flask(__name__)
 api = Api(app)
@@ -24,7 +24,7 @@ class Values(Resource):
     def get(self): 
 
         algo = request.args.get('algo')
-        target_column = request.args.get('target')
+        target_column = get_targets(request.args.get('target'))
 
         match algo:
             case "rf":

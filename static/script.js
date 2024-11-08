@@ -1,7 +1,12 @@
 document.getElementById('compute-button').addEventListener('click', function() {
 
     const algo = document.getElementById('algo-select').value;
-    const target = document.getElementById('dropdown').value;
+    var target = [];
+    for(var option of document.getElementById('dropdown').options) {
+        if(option.selected) {
+            target.push(option.value)
+        }
+    }
 
     fetch(`/values?algo=${algo}&target=${target}`)
         .then(response => {

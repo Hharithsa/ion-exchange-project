@@ -6,6 +6,7 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 from sklearn.impute import SimpleImputer
+from helper import get_features
 
 import matplotlib
 import matplotlib.pyplot as plt
@@ -21,16 +22,10 @@ def GetRFValues(target):
     # Remove rows with missing values
     data.dropna(inplace=True)
 
-    # Select the feature columns
-    features = []
-
     column_names = data.columns.tolist()
-    for column in column_names:
-        if column != target:
-            features.append(column)
-        
-    print(features)
-    print(target)
+
+    # Select the feature columns
+    features = get_features(column_names, target)
 
     # Split the data into training and testing sets
     train_data, test_data, train_target, test_target = train_test_split(data[features], data[target], test_size=0.2, random_state=42)
